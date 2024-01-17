@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Page Title</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+
+      header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+
+      header img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 10px;
+      }
+
+      nav {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+        text-align: center;
+      }
+
+      nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+        margin: 0 10px;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        background-color: #555;
+      }
+
+      main {
+        padding: 20px;
+      }
+
+      footer {
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+      }
+
+      /* Modal styles */
+      .modal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        width: 300px;
+        text-align: center;
+      }
+
+      /* Button styles */
+      .open-modal-btn {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      /* Close button styles */
+      .close-btn {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      /* Save button styles */
+      .save-btn {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      /* Input styles */
+      label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: bold;
+      }
+
+      input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        box-sizing: border-box;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#" onclick="openAboutPopup()">About</a>
+      <a href="#">Contact</a>
+    </nav>
+    <header>
+      <img width="80px" height="80px" src="your-logo.png" alt="Your Logo" />
+      <marquee style="color: magenta">PRIMATHON ACADEMY</marquee>
+    </header>
+
+    <main>
+      <section>
+        <h2 style="color: violet">Welcome!!! We are here to support</h2>
+        <p>
+          This is the main content of your webpage. You can add and customize
+          this section as needed.
+        </p>
+        <button class="open-modal-btn" onclick="openModal()">Open Modal</button>
+      </section>
+
+      <section id="aboutSection" style="display: none">
+        <h2>About Us</h2>
+        <p>
+          This is the about section of your webpage. Provide information about
+          your academy and its goals.
+        </p>
+      </section>
+    </main>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+      <span class="close-btn" onclick="closeModal()">&times;</span>
+      <h2>Enter Your Details</h2>
+      <label for="name">Name:</label>
+      <input type="text" id="name" placeholder="Enter your name" />
+      <label for="email">Email:</label>
+      <input type="email" id="email" placeholder="Enter your email" />
+      <button class="save-btn" onclick="saveDetails()">Save</button>
+    </div>
+
+    <footer>
+      <p>&copy; 2024 Your Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function openModal() {
+        document.getElementById("myModal").style.display = "block";
+      }
+
+      function closeModal() {
+        document.getElementById("myModal").style.display = "none";
+      }
+
+      function saveDetails() {
+        // Add your logic to save the entered details
+        alert("Details saved!");
+        closeModal();
+      }
+
+      function openAboutPopup() {
+        document.getElementById("aboutSection").style.display = "block";
+        // You can add additional logic for the about section if needed
+      }
+    </script>
+  </body>
+</html>
